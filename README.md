@@ -12,3 +12,7 @@
 
   backend和executor之间JMS通信的协议类
 
+# 系统设计
+
+![系统设计](design.png)
+
