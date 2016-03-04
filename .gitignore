@@ -3,7 +3,8 @@
 *.war
 *.ear
 *.class
-activemq-data/**
+activemq-data/**/*
+*activemq-data*
 
 # eclipse specific git ignore
 *.pydevproject
