@@ -5,3 +5,5 @@
 2016-03-0416:54:13 [cn.jdworks.etl.executor.App.main()] INFO  cn.jdworks.etl.executor.App(line-10) 0     - hello world
 2016-03-0416:56:25 [cn.jdworks.etl.executor.App.main()] INFO  cn.jdworks.etl.executor.App(line-10) 1     - hello world
 2016-03-0622:51:57 [cn.jdworks.etl.executor.App.main()] INFO  cn.jdworks.etl.executor.App(line-10) 0     - hello world
+2016-03-1318:10:43 [main] INFO  cn.jdworks.etl.executor.App(line-15) 0     - Executor is running...press any keys to EXIT.
+2016-03-1318:10:57 [main] INFO  cn.jdworks.etl.executor.App(line-23) 14321  - Executor stopped.

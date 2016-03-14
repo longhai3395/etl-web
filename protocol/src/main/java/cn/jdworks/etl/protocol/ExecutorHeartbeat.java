@@ -2,79 +2,48 @@ package cn.jdworks.etl.protocol;
 
 import java.io.Serializable;
 import java.util.Hashtable;
-import cn.jdworks.etl.protocol.TaskStats;
+import java.util.UUID;
 
-public class ExecutorHeartbeat implements Serializable{
-    private String ipAddr;
-    private double cpuLoad;
-    private double memLoad;
-    private Hashtable<Integer, TaskStats> tasks;
- 
-    public ExecutorHeartbeat() {
-       super();
-    }
- 
-    public ExecutorHeartbeat(String ipAddr, double cpuLoad, double memLoad, Hashtable<Integer, TaskStats> tasks) {
-        super();
-        this.ipAddr = ipAddr;
-        this.cpuLoad = cpuLoad;
-	this.memLoad = memLoad;
-	this.tasks = tasks;
-    }
+import cn.jdworks.etl.protocol.TaskStat;
 
+public class ExecutorHeartbeat implements Serializable {
 
-    /**
-     * Set the value of ipAddr.
-     **/
-    public void setIpAddr(String ipAddr) {
-	this.ipAddr = ipAddr;
-    }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3643183573364211417L;
+	private UUID id;
+	private Hashtable<Integer, TaskStat> taskStats;
 
-    /**
-     * Get the value of ipAddr.
-     **/
-    public String getIpAddr() {
-	return ipAddr;
-    }
-    /**
-     * Set the value of cpuLoad.
-     **/
-    public void setCpuLoad(double cpuLoad) {
-	this.cpuLoad = cpuLoad;
-    }
+	public ExecutorHeartbeat() {
+		super();
+	}
 
-    /**
-     * Get the value of cpuLoad.
-     **/
-    public double getCpuLoad() {
-	return cpuLoad;
-    }
-    /**
-     * Set the value of memLoad.
-     **/
-    public void setMemLoad(double memLoad) {
-	this.memLoad = memLoad;
-    }
+	public ExecutorHeartbeat(UUID id, Hashtable<Integer, TaskStat> taskStats) {
+		super();
+		this.setId(id);
+		this.taskStats = taskStats;
+	}
 
-    /**
-     * Get the value of memLoad.
-     **/
-    public double getMemLoad() {
-	return memLoad;
-    }
+	public UUID getId() {
+		return id;
+	}
 
-    /**
-     * Set the value of tasks.
-     **/
-    public void setTasks(Hashtable<Integer, TaskStats>  tasks) {
-	this.tasks = tasks;
-    }
+	public void setId(UUID id) {
+		this.id = id;
+	}
 
-    /**
-     * Get the value of tasks.
-     **/
-    public Hashtable<Integer, TaskStats> getTasks() {
-	return tasks;
-    }
+	/**
+	 * Set the value of tasks.
+	 **/
+	public void setTaskStats(Hashtable<Integer, TaskStat> taskStats) {
+		this.taskStats = taskStats;
+	}
 
+	/**
+	 * Get the value of tasks.
+	 **/
+	public Hashtable<Integer, TaskStat> getTaskStats() {
+		return taskStats;
+	}
 }

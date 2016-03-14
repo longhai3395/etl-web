@@ -1,6 +1,8 @@
 package cn.jdworks.etl.backend;
 
 import java.net.URI;
+import java.util.UUID;
+
 import org.apache.activemq.broker.BrokerFactory;
 import org.apache.activemq.broker.BrokerService;
 
@@ -96,7 +98,7 @@ public class ActiveMQTest implements ExceptionListener{
 	    // Create a messages
 	    //	    String text = "Hello world! From: " + Thread.currentThread().getName() + " : " + this.hashCode();
 	    //Person person = new Person(23, "阿三");
-	    ExecutorHeartbeat obj = new ExecutorHeartbeat("xxx", 2.0, 3.3);
+	    ExecutorHeartbeat obj = new ExecutorHeartbeat(UUID.randomUUID(), null);
 	    ObjectMessage message = session.createObjectMessage((Serializable)obj);
  
 	    // Tell the producer to send the message
@@ -151,7 +153,7 @@ public class ActiveMQTest implements ExceptionListener{
 		ObjectMessage objMsg = (ObjectMessage) message;  
 		try {  
 		    ExecutorHeartbeat obj=(ExecutorHeartbeat) objMsg.getObject();  
-		    System.out.println("IP："+obj.getIpAddr()+"cpu:"+obj.getCpuLoad());  
+		    System.out.println("Id："+obj.getId());  
 		} catch (JMSException e) {  
 		    e.printStackTrace();  
 		} 

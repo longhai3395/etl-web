@@ -22,7 +22,6 @@ public class StreamWatch extends Thread {
   
     public void run() {  
 	try {  
-	    PrintWriter pw = null;  
 	    InputStreamReader isr = new InputStreamReader(is);  
 	    BufferedReader br = new BufferedReader(isr);  
 	    String line = null;  
@@ -31,8 +30,6 @@ public class StreamWatch extends Thread {
 		if (debug)  
 		    System.out.println(type + ">" + line);  
 	    }  
-	    if (pw != null)  
-		pw.flush();  
 	} catch (IOException ioe) {  
 	    ioe.printStackTrace();  
 	}  

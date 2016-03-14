@@ -31,7 +31,7 @@ public class TimerTest {
 
 	
         //每天的date时刻执行task，每隔2秒重复执行
-        int period = 2 * 1000;
+//        int period = 2 * 1000;
         Timer timer = new Timer();
         timer.schedule(task, date);
         //每天的date时刻执行task, 仅执行一次

@@ -4,9 +4,6 @@
 
 <web-app>
   <display-name>ETL Backend Web Application</display-name>
-  <listener>  
-    <listener-class>cn.jdworks.etl.backend.MainServletContextListener</listener-class>
-  </listener>
   <filter>
     <filter-name>etl</filter-name>
     <filter-class>org.nutz.mvc.NutFilter</filter-class>

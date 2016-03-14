@@ -1,7 +1,6 @@
 package cn.jdworks.etl.executor;
 
 import org.junit.*;
-import java.lang.*;
 import java.util.*;
 
 public class ProcessTest {
@@ -12,11 +11,13 @@ public class ProcessTest {
 	    List<String> list = new ArrayList<String>();  
 	    ProcessBuilder pb = null;  
 	    Process p = null;  
-	    // list the files and directorys under C:\  
 	    list.add("java");  
 	    list.add("-jar");  
-	    list.add("/Users/lixin/git/etl/task/target/footask.jar");
+	    list.add("/Users/lixin/git/etl/footask/target/footask.jar");
 	    list.add("1234");
+	    list.add("abcd");
+	    list.add("hey");
+	    list.add("jude");
 	    pb = new ProcessBuilder(list);  
 	    p = pb.start();  
   
@@ -26,8 +27,8 @@ public class ProcessTest {
 	    StreamWatch outputWatch = new StreamWatch(p.getInputStream(),  
 						      "OUTPUT");  
 	    // start to watch  
-	    errorWatch.start();  
-	    outputWatch.start();  
+	    errorWatch.start();
+	    outputWatch.start();
 	    //wait for exit  
 	    int exitVal = p.waitFor();  
 	    //print the content from ERROR and OUTPUT  

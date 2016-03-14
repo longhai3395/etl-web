@@ -3,28 +3,32 @@ package cn.jdworks.etl.protocol;
 import java.util.Hashtable;
 import java.io.*;
 
-public class TaskStats implements Serializable{
-    private int id;
+public class TaskStat implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7577751804242860960L;
+	private int id;
     private int threadNum;
     private Hashtable<String, Integer> dbConns = new Hashtable<String, Integer>();
  
-    public TaskStats() {
+    public TaskStat() {
        super();
     }
  
-    public TaskStats(int id, int threadNum, Hashtable<String, Integer> dbConns) {
+    public TaskStat(int id, int threadNum, Hashtable<String, Integer> dbConns) {
         super();
 	this.id = id;
 	this.threadNum = threadNum;
 	this.dbConns = dbConns;
     }
 
-    public static TaskStats fromBytes(byte[] bytes)
+    public static TaskStat fromBytes(byte[] bytes)
     {
 	try{
 	    ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
 	    ObjectInputStream ois = new ObjectInputStream(bais);
-	    TaskStats stats = (TaskStats)ois.readObject();
+	    TaskStat stats = (TaskStat)ois.readObject();
 	    bais.close();
 	    ois.close();
 	    return stats;
